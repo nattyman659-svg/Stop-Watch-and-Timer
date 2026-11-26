@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <div class="header">
+            <div class="title1"><button class="btn" type="button">Stopwatch</button></div>
+            <div class="title2"><button class="btn" type="button">Timer</button></div>
+        </div>
+        <div class="timeShower">
+            <svg class="progress-ring" viewBox="0 0 100 100" aria-hidden="true">
+                <circle
+                    cx="50" cy="50" r="45"
+                    stroke="#191E35" stroke-width="6" fill="transparent"
+                />
+                <circle
+                    id="progress-ring"
+                    cx="50" cy="50" r="45"
+                    stroke="url(#purple-blue-gradient)" stroke-width="6"
+                    stroke-linecap="round" fill="transparent"
+                    stroke-dasharray="282.74"
+                    stroke-dashoffset="0"
+                />
+            </svg>
+            <div class="dial">
+                <span id="time-display" class="time">00:00.00</span>
+                <span id="status-display" class="status">Ready</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="pauseBtn" type="button">Pause</button>
+            <button id="startStopBtn" type="button">Start</button>
+            <button id="resetBtn" type="button">Reset</button>
+        </div>
+        <hr>
+        <div class="lapContainer">
+            <div class="lapTitle">Laps</div>
+            <div class="lapButton">
+                <button id="recordLapBtn" type="button">
+                    <img src="images/record-lap.png" alt="Record Lap">
+                    Lap
+                </button>
+            </div>
+        </div>
+        <div class="lapList">
+            <ul id="lapList">
+                <li>Lap <span id="currentLap"></span><span id="lapTime">00:00:00</span></li>
+            </ul>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
