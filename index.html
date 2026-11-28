@@ -9,15 +9,16 @@
 <body>
     <main class="container">
         <div class="header">
-            <div class="title1"><button class="btn" type="button">Stopwatch</button></div>
-            <div class="title2"><button class="btn" type="button">Timer</button></div>
+            <div id="title1" class="title1"><button class="btn" type="button">Stopwatch</button></div>
+            <div id="title2" class="title2"><button class="btn" type="button">Timer</button></div>
         </div>
-        <div class="timeShower">
-            <svg class="progress-ring" viewBox="0 0 100 100" aria-hidden="true">
-                <circle
-                    cx="50" cy="50" r="45"
-                    stroke="#191E35" stroke-width="6" fill="transparent"
-                />
+        <div class="stopwatch-container" >
+            <div class="timeShower">
+                <svg class="progress-ring" viewBox="0 0 100 100" aria-hidden="true">
+                    <circle
+                        cx="50" cy="50" r="45"
+                        stroke="#191E35" stroke-width="6" fill="transparent"
+                    />
                 <circle
                     id="progress-ring"
                     cx="50" cy="50" r="45"
@@ -28,31 +29,61 @@
                 />
             </svg>
             <div class="dial">
-                <span id="time-display" class="time">00:00.00</span>
+                <span id="time-display" class="time">00:00:00.00</span>
                 <span id="status-display" class="status">Ready</span>
             </div>
         </div>
         <div class="buttons">
-            <button id="pauseBtn" type="button">Pause</button>
-            <button id="startStopBtn" type="button">Start</button>
-            <button id="resetBtn" type="button">Reset</button>
+            <button id="pauseBtn" type="button" class="button1">Pause</button>
+            <button id="startStopBtn" type="button" class="button2">Start</button>
+            <button id="resetBtn" type="button" class="button3">Reset</button>
         </div>
-        <hr>
         <div class="lapContainer">
             <div class="lapTitle">Laps</div>
             <div class="lapButton">
-                <button id="recordLapBtn" type="button">
-                    <img src="images/finish.png" alt="Record Lap">
+                <button id="lap-btn" type="button" class="lap-btn">
+                    <img class="flag-icon" src="images/finish-flag.png" alt="Record Lap">
                     Lap
                 </button>
             </div>
         </div>
         <div class="lapList">
             <ul id="lapList">
-                <li>Lap <span id="currentLap"></span><span id="lapTime">00:00:00</span></li>
+                <li>Lap 1 <span id="currentLap"></span><span id="lapTime">00:00:00</span></li>
             </ul>
         </div>
+        </div>
+ <div class="timer-container" style="display: none;">
+<div class="timer-header">
+      <P class="timer-title">HOUR</P>
+      <P class="timer-title">MINUTE</P>
+      <P class="timer-title">SECOND</P>
+      </div>
+    <div class="time-inputs">
+      <input type="number" id="timer-hh" placeholder="Hour" min="0" max="99" />
+      <input type="number" id="timer-mm" placeholder="Min" min="0" max="59" />
+      <input type="number" id="timer-ss" placeholder="Sec" min="0" max="59" />
+    </div>
+
+    <div class="circle-wrapper">
+      <svg class="progress-ring" viewBox="0 0 300 300" width="300" height="300">
+        <circle class="ring-bg" cx="150" cy="150" r="110" />
+      
+        <circle class="ring-progress" cx="150" cy="150" r="110" />
+      </svg>
+      <div class="timer-center-content">
+        <div class="time-display" id="timer-display">00:05:00.00</div>
+        <div class="status-label" id="timer-status">READY</div>
+      </div>
+    </div>
+
+     <div class="buttons">
+            <button id="pause-Btn" type="button" class="button1">Pause</button>
+            <button id="startStop-Btn" type="button" class="button2">Start</button>
+            <button id="reset-Btn" type="button" class="button3">Reset</button>
+        </div>
+        
     </main>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
